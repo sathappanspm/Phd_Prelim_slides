@@ -1,0 +1,65 @@
+% \subsection{what is an Event}
+\begin{frame}{Introduction}
+\begin{block}{What is an Event of Interest?}
+ Any significant societal event  that happened in the recent past and is reported in a national news paper of repute. Societal events of interest include \textit{Military Action}, \textit{Non-state Actor} and \textit{Civil Unrest} events. 
+\end{block}
+\pause
+\begin{block}{Structured Event Record}
+An event record generally contains information regarding: 
+\begin{itemize}
+    \item \textbf{\textit{Who}} is responsible for the event
+    \item \textbf{\textit{When}} the event happened
+    \item \textbf{\textit{Where}} did the event occur
+    \item \textbf{\textit{Why}} did the event occur
+    \item \textbf{\textit{What}} kind of event occured
+\end{itemize}
+\end{block}
+\end{frame}
+
+% \subsection{Example}
+\begin{frame}{Example}
+
+\tikzstyle{na} = [baseline=-.5ex]
+
+\begin{itemize}[<+-| alert@+>]
+    \item \textbf{Who}
+        \tikz[na] \node[coordinate] (n1) {};
+\end{itemize}
+
+\begin{block}{}
+Beirut, Lebanon \tikz[baseline]{ \node[fill=blue!20,anchor=base] (t4){2:00 A.M.};}.In addition to the arrival of Syrian military reinforcements, \tikz[baseline]{\node[fill=red!20,anchor=base] (t1) {the Russian Aerospace forces};} have been 
+\tikz[baseline]{\node[fill=black!20,anchor=base] (t2) {repeatedly pounding};} the \tikz[baseline]{
+\node[fill=green!20,anchor=base] (t3) {Jisr Al-Shughour countryside};}, forcing the jihadist rebels of \tikz[baseline]{
+            \node[fill=red!20,anchor=base] (t1) {Turkestan Islamic Party (TIP)};} to abandon several outposts.
+\end{block}
+
+\begin{itemize}[<+-| alert@+>]
+    \item \textbf{Where}
+        \tikz[na]\node [coordinate] (n2) {};
+    \item \textbf{When}
+        \tikz[na]\node [coordinate] (n4) {};
+    \item \textbf{What}
+    \tikz[na]\node [coordinate] (n3) {};
+\end{itemize}
+
+% Now it's time to draw some edges between the global nodes. Note that we
+% have to apply the 'overlay' style.
+\begin{tikzpicture}[overlay]
+        \path[->]<1-> (n1) [bend left] edge (t1);
+        \path[->]<2-> (n2) [bend right] edge (t3);
+        \path[->]<3-> (n3) edge [out=0, in=-90] (t2);
+        \path[->]<4-> (n4) edge [out=0, in=-90] (t4);
+\end{tikzpicture}
+
+\end{frame}
+
+% \subsection{Why track events?}
+\begin{frame}{Why track/record events?}
+\begin{itemize}
+    \item Travel Alerts
+    \item Supply chain management
+    \item Prioritizing citizen grievances
+    \item Design measures to control violence and minimize disruptions
+    \item Relationships to market and government instability
+\end{itemize}
+\end{frame}

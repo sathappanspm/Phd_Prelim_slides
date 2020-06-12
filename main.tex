@@ -1,0 +1,167 @@
+\documentclass[aspectratio=1610,bigger,utf8,xcolor=table]{beamer}
+\usetheme{Hokie}
+\usepackage{graphicx}
+\usepackage[scaled]{berasans}
+\usepackage[scaled]{beramono}
+\usepackage[T1]{fontenc}
+\usepackage{bibentry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{subcaption}
+\usepackage{tikz}
+\nobibliography*
+\logo{\includegraphics[height=14pt]{2017-logo-color}}
+
+\title{A Hybrid Micro-Tasking Framework for Event Coding}
+\subtitle{Prelim Presentation}
+\author{Sathappan Muthiah}
+\institute{Virginia Tech}
+\date{\today}
+% \setlength{\tabcolsep}{4pt}
+\usepackage{etoolbox}
+\usetikzlibrary{arrows}
+
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Overlay Generator - Annotated Figures v0.0.1
+% Created with http://ff.cx/latex-overlay-generator/
+% If this generator saves you time, consider donating 5,- EUR! :-)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\annotatedFigureBoxCustom{bottom-left}{top-right}{label}{label-position}{box-color}{label-color}{border-color}{text-color}
+\newcommand*\annotatedFigureBoxCustom[8]{\draw[#5,thick,rounded corners] (#1) rectangle (#2);\node at (#4) [fill=#6,thick,shape=circle,draw=#7,inner sep=2pt,font=\sffamily,text=#8] {\textbf{#3}};}
+%\annotatedFigureBox{bottom-left}{top-right}{label}{label-position}
+\newcommand*\annotatedFigureBox[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{white}{white}{black}{black}}
+\newcommand*\annotatedFigureText[4]{\node[draw=none, anchor=south west, text=#2, inner sep=0, text width=#3\linewidth,font=\sffamily] at (#1){#4};}
+\newenvironment {annotatedFigure}[1]{\centering\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\makeatletter
+\def\rowcolor{\noalign{\ifnum0=`}\fi\bmr@rowcolor}
+\newcommand<>{\bmr@rowcolor}{%
+    \alt#1%
+        {\global\let\CT@do@color\CT@@do@color\@ifnextchar[\CT@rowa\CT@rowb}% 
+        {\ifnum0=`{\fi}\@gooble@rowcolor}% 
+}
+
+\newcommand{\@gooble@rowcolor}[2][]{\@gooble@rowcolor@}
+\newcommand{\@gooble@rowcolor@}[1][]{\@gooble@rowcolor@@}
+\newcommand{\@gooble@rowcolor@@}[1][]{\ignorespaces}
+\makeatother
+
+
+
+\makeatletter
+\def\cellcolor{{\ifnum0=`}\fi\bmr@cellcolor}
+\newcommand<>{\bmr@cellcolor}{%
+    \alt#1%
+        {\global\let\CT@do@color\CT@@do@color\@ifnextchar[\CT@rowa\CT@rowb}% 
+        {\ifnum0=`{\fi}\@gooble@cellcolor}% 
+}
+
+\newcommand{\@gooble@cellcolor}[2][]{\@gooble@cellcolor@}
+\newcommand{\@gooble@cellcolor@}[1][]{\@gooble@cellcolor@@}
+\newcommand{\@gooble@cellcolor@@}[1][]{\ignorespaces}
+\makeatother
+
+\makeatletter
+\beamer@compresstrue
+\patchcmd{\insertnavigation}{\hskip-1.875ex plus-1fill}{}{}{}
+\apptocmd{\partentry}{\beamer@xpos=0\relax}{}{}
+\def\sectionentry#1#2#3#4#5{% section number, section title, page
+  \ifnum#5=\c@part%
+  \hbox{\def\insertsectionhead{#2}%
+    \def\insertsectionheadnumber{#1}%
+    \def\insertpartheadnumber{#5}%
+    {%
+      \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+      \ifnum\c@section=#1%
+        \rlap{\hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot}}}}%
+      \fi}%
+  }%
+  \fi\ignorespaces}
+\makeatother
+\begin{document}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\tikzstyle{every picture}+=[remember picture]
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+% \AtBeginSection[]
+% {
+% \begin{frame}<beamer>{\insertsectionhead}
+% \tableofcontents[currentsection,currentsubsection, 
+%     hideothersubsections
+% ]
+% \end{frame}
+% }
+
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Contents}
+	\tableofcontents[hideallsubsections]
+\end{frame}
+
+
+\section{Introduction}
+\input{common/introduction.tex}
+
+\section{Studying Model Drift in Anticipatory Intelligence Systems}
+\input{Problem1/embers.tex}
+
+\section{A Hybrid Micro Tasking Framework for Event Coding}
+\input{Problem2/microtasking.tex}
+
+% % \section{Problem 3}
+% % \input{Problem3/uncertainty.tex}
+
+%% \section{Proposed Problems}
+\input{Problem4/knowledgeGraph.tex}
+
+%% \section{Timeline}
+% \begin{frame}{Proposed Timeline}
+%     \begin{figure}
+%         \centering
+%         \includegraphics{}
+%     \end{figure}
+% \end{frame}
+
+\input{common/publications.tex}
+
+\begin{frame}[allowframebreaks]
+        \frametitle{References}
+        \bibliographystyle{apalike}
+        \bibliography{references.bib}
+\end{frame}
+
+\input{common/hidden.tex}
+
+
+\end{document}
